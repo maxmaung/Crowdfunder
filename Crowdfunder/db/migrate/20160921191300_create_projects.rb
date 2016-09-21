@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :description
       t.integer :goal
+      t.integer :owner_id
       t.date :start_date
       t.date :end_date
 
