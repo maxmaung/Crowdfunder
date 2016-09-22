@@ -1,6 +1,9 @@
-<h1>Projects#index</h1>
-<p>
-<%= link_to 'New Project', new_project_path %>
-</p>
+<h1>Fund Us!</h1>
 
-<%= render @projects %>
+<div class="project">
+  <% @projects.each do |project| %>
+    <h3>Name: <%= project.name %></h3>
+    <%= project.description %><br><br>
+    <%= link_to 'Show project', project_path(project) %>
+  <% end %>
+</div>
