@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :pledges
 
   has_secure_password
+
+  validates :email, uniqueness: true
 end
