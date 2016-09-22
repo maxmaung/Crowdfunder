@@ -1,2 +1,10 @@
 
 <%= link_to 'Back', root_path %>
+
+<div class="project">
+    <h3>Name: <%= @project.name %></h3>
+    <%= @project.description %><br>
+    <h4>Target:<%= @project.goal %></h4><br><br>
+</div>
+
+<%= link_to "Make a Pledge", new_project_pledge_path(@project) %>
