@@ -14,11 +14,13 @@ class PledgesController < ApplicationController
 
     if @pledge.save
       redirect_to project_path(@project), :notice => 'Reservation created with success'
-      # single_pledge = @pledge.amount
-      # single_pledge += pledge_total
     else
       render :new
     end
+  end
+
+  def pledge_total
+    @pledges = @project.pledges.all
   end
 
   private
