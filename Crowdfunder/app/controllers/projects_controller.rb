@@ -19,7 +19,8 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.owner_id = params[:user_id]
+    @project.owner = current_user
+    # byebug
     if @project.save
       redirect_to projects_url [@user, @project]
     else
