@@ -6,6 +6,8 @@ class UsersController < ApplicationController
    def show
      @user = User.find(params[:id])
      @projects = Project.where({:owner_id => @user.id})
+
+     @pledges = Pledge.where({:user_id => @user.id})
    end
 
    def create

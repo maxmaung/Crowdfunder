@@ -6,8 +6,22 @@
 </div>
 
 <div>
+  <h3>List of Projects</h3>
   <% @projects.each do |project| %>
-  <%= project.name %>
+  <%= link_to project.name, project_path(project) %>
+  </br>
+  <% end %>
+</br>
+</br>
+</div>
+
+
+<div>
+  <h3>List of Pledges</h3>
+  <% @pledges.each do |pledge| %>
+  <%= pledge.project.name %> :
+  <%= pledge.amount %>
+</br>
   <% end %>
 </div>
 
