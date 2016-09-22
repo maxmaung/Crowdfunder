@@ -5,12 +5,16 @@ Rails.application.routes.draw do
 
   root 'projects#index'
 
+  resources :users do
+    resources :projects
+  end
+
+  resources :sessions,    only: [:new, :create, :destroy]
+  
   resources :projects do
     resources :pledges
   end
 
-  resources :sessions,    only: [:new, :create, :destroy]
 
-  resources :users
 
 end
